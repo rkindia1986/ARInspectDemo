@@ -51,18 +51,23 @@ public class FactDataPresImpl implements FactDataPres {
                 }
             });
         } else {
-            factDataView.displayMessage(context.getString(R.string.nonetwork), true);
+            factDataView.displayMessage(context.getString(R.string.nonetwork), false);
         }
     }
 
     //parse JSON response and if response valid then display data in listview
     private void parseResponse(String body) {
         Gson gson = new Gson();
-        FactDataList factDataList = gson.fromJson(body, FactDataList.class);
-        if (!factDataList.title.isEmpty() || (factDataList.factDataArrayList != null && factDataList.factDataArrayList.size() > 0)) {
-            factDataView.UpdateListView(factDataList);
-        } else {
-            factDataView.displayMessage(context.getString(R.string.nodata),false);
+        try {
+            FactDataList factDataList = gson.fromJson(body, FactDataList.class);
+            if (!factDataList.title.isEmpty() || (factDataList.factDataArrayList != null && factDataList.factDataArrayList.size() > 0)) {
+                factDataView.UpdateListView(factDataList);
+            } else {
+                factDataView.displayMessage(context.getString(R.string.nodata), false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            factDataView.displayMessage(context.getString(R.string.nodata), false);
         }
     }
 }
