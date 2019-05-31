@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class FactDataList {
     @SerializedName("rows")
-    public ArrayList<FactData> factDataArrayList;
+    public ArrayList<FactData> factDataArrayList = new ArrayList<>();
 
     @SerializedName("title")
     public String title;
