@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ARInspectDemo</string>
+    <string name="nonetwork">Network Error</string>
+    <string name="nodata">Data not found</string>
 </resources>

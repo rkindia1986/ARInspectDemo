@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public class FactDataList {
     @SerializedName("rows")
-    private ArrayList<FactData> factDataArrayList;
+    public ArrayList<FactData> factDataArrayList;
 
     @SerializedName("title")
-    private String title;
+    public String title;
 
 }
