@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements FactDataView {
             DisplayTitle(getString(R.string.app_name));
     }
 
-    //Display alert dialog
+    //Display alert dialog, @s= display message string and isfinish = true when want to finish activity on dialog button
     @Override
     public void displayMessage(String s, final boolean isfinish) {
         mswiperefreshlayout.setRefreshing(false);
